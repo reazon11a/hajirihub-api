@@ -12,13 +12,12 @@ require_once __DIR__ . '/routes/qr.php';
 require_once __DIR__ . '/routes/attendance.php';
 require_once __DIR__ . '/routes/leave_requests.php';
 
-// ── CORS ──────────────────────────────────────────────────────────────────────
 $allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:4173',
     'http://localhost:8080',
-    'http://project.reazon.com'
-    'http://hajirihub.reazon.me'
+    'http://project.reazon.me',
+    'https://hajirihub.reazon.me',   
     'https://hajirihub-api-production.up.railway.app',
 ];
 
