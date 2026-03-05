@@ -18,6 +18,8 @@ $allowedOrigins = [
     'http://localhost:4173',
     'http://localhost:8080',
     'http://project.reazon.com'
+    'http://hajirihub.reazon.me'
+    'https://hajirihub-api-production.up.railway.app',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
