@@ -10,12 +10,14 @@ require_once __DIR__ . '/routes/profile.php';
 require_once __DIR__ . '/routes/classes.php';
 require_once __DIR__ . '/routes/qr.php';
 require_once __DIR__ . '/routes/attendance.php';
+require_once __DIR__ . '/routes/leave_requests.php';
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
 $allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:4173',
     'http://localhost:8080',
+    'http://project.reazon.com'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -79,7 +81,8 @@ try {
         $resource === 'profile'     => handleProfile($method, $segments),
         $resource === 'classes'     => handleClasses($method, $segments),
         $resource === 'qr-sessions' => handleQr($method, $segments),
-        $resource === 'attendance'  => handleAttendance($method, $segments),
+        $resource === 'attendance'      => handleAttendance($method, $segments),
+        $resource === 'leave-requests'  => handleLeaveRequests($method, $segments),
         $resource === 'health'      => jsonOk(['status' => 'ok', 'time' => date('c')]),
         default                     => jsonError('Endpoint not found', 404),
     };

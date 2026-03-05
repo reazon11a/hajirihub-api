@@ -1,15 +1,15 @@
 #!/bin/bash
 # Hajiri Hub - One-time server setup script
-# Run with: sudo bash /home/reazon/hajiri-api/server-setup.sh
+# Run with: sudo bash /home/reazon/hajirihub-api/server-setup.sh
 
 set -e
 
 echo "==> Setting up MySQL database..."
-mysql < /home/reazon/hajiri-api/setup.sql
+mysql < /home/reazon/hajirihub-api/setup.sql
 
 echo "==> Configuring Nginx..."
-cp /home/reazon/hajiri-api/nginx-hajiri-api.conf /etc/nginx/sites-available/hajiri-api
-ln -sf /etc/nginx/sites-available/hajiri-api /etc/nginx/sites-enabled/hajiri-api
+cp /home/reazon/hajirihub-api/nginx-hajirihub-api.conf /etc/nginx/sites-available/hajirihub-api
+ln -sf /etc/nginx/sites-available/hajirihub-api /etc/nginx/sites-enabled/hajirihub-api
 
 echo "==> Testing Nginx config..."
 nginx -t
